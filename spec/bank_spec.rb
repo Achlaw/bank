@@ -15,4 +15,12 @@ describe Bank do
     end
   end
 
+  describe '#withdraw' do
+    it 'removes money from bank balance' do
+      bank = Bank.new
+      bank.withdraw(50)
+      expect(bank.balance).to eq(50)
+    end
+  end
+
 end
