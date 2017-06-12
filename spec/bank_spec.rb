@@ -1,6 +1,6 @@
 require 'bank'
 
-describe bank do
+describe Bank do
 
   it 'should contain a balance' do
     bank = Bank.new
