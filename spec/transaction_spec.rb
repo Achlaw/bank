@@ -8,4 +8,10 @@ describe Transaction do
     expect(transaction.history).to eq([{Date: '13/06/2017', Credit: 100, Balance: 100}])
   end
 
+  it 'adds date to withdraw history' do
+    transaction = Transaction.new
+    transaction.add_withdraw_history(100, 0)
+    expect(transaction.history).to eq([{Date: '13/06/2017', Debit: 100, Balance: 0}])
+  end
+
 end
