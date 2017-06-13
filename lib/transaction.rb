@@ -10,4 +10,8 @@ class Transaction
     @history << {Date: Time.new.strftime("%d/%m/%Y"), Credit: amount, Balance: balance}
   end
 
+  def add_withdraw_history(amount, balance)
+    @history << {Date: Time.new.strftime("%d/%m/%Y"), Debit: amount, Balance: balance}
+  end
+
 end
