@@ -16,6 +16,7 @@ class Bank
 
   def withdraw(amount)
     @balance -= amount
+    @transaction.add_withdraw_history(amount, @balance)
   end
 
 end
