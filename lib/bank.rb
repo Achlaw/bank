@@ -19,4 +19,11 @@ class Bank
     @transaction.add_withdraw_history(amount, @balance)
   end
 
+  def print
+    puts "|    Date    |  Credit  |  Debit  |  Balance  |\n"
+    @transaction.history.each do |history|
+      puts "| #{history[:Date]} |    #{history[:Credit]}   |    #{history[:Debit]}   |   #{history[:Balance]}   |\n"
+    end
+  end
+
 end
