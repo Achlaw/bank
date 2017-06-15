@@ -14,6 +14,10 @@ I can make a withdrawal of 500 from my bank
 As a customer
 So that I can know how much money I have
 I can check my current balance
+
+As a customer
+So that I can keep track of my savings
+I can print out a bank statement
 ```
 
 ## How to use in IRB
