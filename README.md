@@ -18,20 +18,19 @@ I can check my current balance
 
 ## How to use in IRB
 ```
-Alexs-MacBook-Pro:bank alex$ irb
+$ irb
 2.4.0 :001 > require './lib/bank'
  => true
 2.4.0 :002 > bank = Bank.new
- => #<Bank:0x007f8554089f40 @balance=0>
-2.4.0 :003 > bank.balance
- => 0
-2.4.0 :004 > bank.deposit(1000)
- => 1000
-2.4.0 :005 > bank.balance
- => 1000
-2.4.0 :006 > bank.withdraw(500)
- => 500
-2.4.0 :007 > bank.balance
- => 500
-2.4.0 :008 > quit
+ => #<Bank:0x007fa79f1d5f08 @balance=0, @transaction=#<Transaction:0x007fa79f1d5ee0 @history=[]>>
+2.4.0 :003 > bank.deposit(500)
+ => [{:Date=>"15/06/2017", :Credit=>500, :Balance=>500}]
+2.4.0 :004 > bank.withdraw(200)
+ => [{:Date=>"15/06/2017", :Credit=>500, :Balance=>500}, {:Date=>"15/06/2017", :Debit=>200, :Balance=>300}]
+2.4.0 :005 > bank.print
+|    Date    |  Credit  |  Debit  |  Balance  |
+| 15/06/2017 |    500   |       |   500   |
+| 15/06/2017 |       |    200   |   300   |
+ => [{:Date=>"15/06/2017", :Credit=>500, :Balance=>500}, {:Date=>"15/06/2017", :Debit=>200, :Balance=>300}]
+2.4.0 :006 > quit
 ```
