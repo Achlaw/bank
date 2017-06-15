@@ -24,11 +24,23 @@ describe Bank do
   end
 
   describe '#print' do
-    it 'prints a bank statement' do
+    it 'prints a deposit bank statement' do
       bank.deposit(100)
       expect {bank.print}.to output(
         "|    Date    |  Credit  |  Debit  |  Balance  |\n" \
         "| #{Time.new.strftime("%d/%m/%Y")} |    100   |       |   100   |\n"
+      ).to_stdout
+    end
+  end
+
+  describe '#print' do
+    it 'prints a withdraw bank statement' do
+      bank.deposit(100)
+      bank.withdraw(50)
+      expect {bank.print}.to output(
+        "|    Date    |  Credit  |  Debit  |  Balance  |\n" \
+        "| #{Time.new.strftime("%d/%m/%Y")} |    100   |       |   100   |\n" \
+        "| #{Time.new.strftime("%d/%m/%Y")} |       |    50   |   50   |\n"
       ).to_stdout
     end
   end
