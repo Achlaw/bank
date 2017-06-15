@@ -34,3 +34,24 @@ $ irb
  => [{:Date=>"15/06/2017", :Credit=>500, :Balance=>500}, {:Date=>"15/06/2017", :Debit=>200, :Balance=>300}]
 2.4.0 :006 > quit
 ```
+## How to run tests
+```
+$ rspec
+
+Bank
+  should contain a balance
+  #deposit
+    stores money in bank balance
+  #withdraw
+    removes money from bank balance
+  #print
+    prints a deposit bank statement
+  #print
+    prints a withdraw bank statement
+
+Transaction
+  adds date to deposit history
+  adds date to withdraw history
+
+Finished in 0.00449 seconds
+```
