@@ -58,4 +58,6 @@ Transaction
   adds date to withdraw history
 
 Finished in 0.00449 seconds
+7 examples, 0 failures
+
 ```
